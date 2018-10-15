@@ -1,0 +1,12 @@
+.navbar-style {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.content-block {
+    width: 100%;
+    height: 200px;
+}
