@@ -1,21 +1,13 @@
 module.exports = {
-  siteMetadata: {
-    title: 'Gatsby Default Starter',
-  },
-  plugins: [
-    'gatsby-plugin-react-helmet',
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
-      },
+    siteMetadata: {
+        title: 'Stephen C Wright | Technical Producer',
+        author: 'Steve Wright',
+        description: 'Stephen C Wright October 2018 Portfolio',
+        siteUrl: 'https://scwright1.github.io/mercury',
+        shortTitle: 'Stephen Wright',
     },
-    'gatsby-plugin-offline',
+  plugins: [
+      `gatsby-plugin-sass`,
+      `gatsby-plugin-react-helmet`
   ],
 }

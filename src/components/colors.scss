@@ -1,0 +1,136 @@
+/* Media Queries */
+@custom-media --breakpoint-not-small screen and (min-width: 30em);
+@custom-media --breakpoint-medium screen and (min-width: 30em) and (max-width: 60em);
+@custom-media --breakpoint-large screen and (min-width: 60em);
+
+.col-twitter-blue {
+    color: #1DA1F2;
+}
+
+.col-orange {
+    color: #FFBC67;
+}
+
+.bg-col-orange {
+    background-color: #FFBC67;
+    transition: 0.2s ease background-color;
+    -o-transition: 0.2s ease background-color;
+    -webkit-transition: 0.2s ease background-color;
+    -moz-transition: 0.2s ease background-color;
+}
+
+.col-red {
+    color: #DA727E;
+}
+
+.col-red-light {
+    color: #DA727E-light;
+}
+
+.bg-col-red {
+    background-color: #DA727E;
+    transition: 0.2s ease background-color;
+    -o-transition: 0.2s ease background-color;
+    -webkit-transition: 0.2s ease background-color;
+    -moz-transition: 0.2s ease background-color;
+}
+
+.bg-col-red-light {
+    background-color: #DA727E-light;
+    transition: 0.2s ease background-color;
+    -o-transition: 0.2s ease background-color;
+    -webkit-transition: 0.2s ease background-color;
+    -moz-transition: 0.2s ease background-color;
+}
+
+.col-salmon {
+    color: #AC6CB2;
+}
+
+.bg-col-salmon {
+    background-color: #AC6CB2;
+    transition: 0.2s ease background-color;
+    -o-transition: 0.2s ease background-color;
+    -webkit-transition: 0.2s ease background-color;
+    -moz-transition: 0.2s ease background-color;
+}
+
+.col-grape {
+    color: #685C79;
+}
+
+.bg-col-grape {
+    background-color: #685C79;
+    transition: 0.2s ease background-color;
+    -o-transition: 0.2s ease background-color;
+    -webkit-transition: 0.2s ease background-color;
+    -moz-transition: 0.2s ease background-color;
+}
+
+.col-navy {
+    color: #455C7B;
+}
+
+.col-navy-light {
+    color: #9295A8;
+}
+
+.bg-col-navy {
+    background-color: #455C7B;
+    transition: 0.2s ease background-color;
+    -o-transition: 0.2s ease background-color;
+    -webkit-transition: 0.2s ease background-color;
+    -moz-transition: 0.2s ease background-color;
+}
+
+.col-dark {
+    color: #303139;
+    transition: 0.2s ease color;
+    -o-transition: 0.2s ease color;
+    -webkit-transition: 0.2s ease color;
+    -moz-transition: 0.2s ease color;
+}
+
+.col-near-dark {
+    color: #363842;
+    transition: 0.2s ease color;
+    transition: 0.2s ease color;
+    -o-transition: 0.2s ease color;
+    -webkit-transition: 0.2s ease color;
+    -moz-transition: 0.2s ease color;
+}
+
+.bg-col-dark {
+    background-color: #303139;
+    transition: 0.2s ease background-color;
+    -o-transition: 0.2s ease background-color;
+    -webkit-transition: 0.2s ease background-color;
+    -moz-transition: 0.2s ease background-color;
+}
+
+.b--col-dark {
+    border-color: #303139;
+}
+
+.bg-near-white {
+    transition: 0.2s ease background-color;
+    -o-transition: 0.2s ease background-color;
+    -webkit-transition: 0.2s ease background-color;
+    -moz-transition: 0.2s ease background-color;
+}
+
+.bg-clear {
+    background-color: transparent;
+    transition: 0.2s ease background-color;
+    -o-transition: 0.2s ease background-color;
+    -webkit-transition: 0.2s ease background-color;
+    -moz-transition: 0.2s ease background-color;
+}
+
+.bg-gradient {
+  background: rgb(102,71,209);
+  background: -moz-linear-gradient(225deg, rgba(102,71,209,1) 0%, rgba(113,217,172,1) 100%);
+  background: -webkit-linear-gradient(225deg, rgba(102,71,209,1) 0%, rgba(113,217,172,1) 100%);
+  background: linear-gradient(225deg, rgba(102,71,209,1) 0%, rgba(113,217,172,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6647d1",endColorstr="#71d9ac",GradientType=1);
+}

@@ -1,92 +1,106 @@
 import React from 'react'
 
-import Layout from '../components/layout'
+import BasicLayout from '../components/basic-layout'
 
-import './index.css'
+import Navbar from '../components/navbar'
 
-const Navbar = ({colorAttr}) => (
-    <div style={colorAttr} className="navbar-style">
-        <p>This is the header</p>
-    </div>
-)
+import HeadlinePanel from '../components/headline'
 
-class ContentBlock extends React.Component {
+import BlogSummary from '../components/blog-summary'
 
-    constructor(props) {
-        super(props);
-        this.positionRef = React.createRef();
+import 'tachyons'
 
-        this._handleScroll = this._handleScroll.bind(this);
+import '../components/base.scss'
 
-        this.setElementRef = element => {
-            this.positionRef = element;
-        };
-    }
+import '../components/colors.scss'
 
-    _handleScroll() {
-        console.log(this.positionRef);
-    }
-
-/*    componentDidMount() {
-        window.addEventListener('scroll', this._handleScroll);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this._handleScroll);
-    } */
-
-    render() {
-        return (
-            <div ref={this.setElementRef} style={{backgroundColor: this.props.backCol}} className="content-block"></div>
-        )
-    }
-
-}
+import '../components/fonts.scss'
 
 class IndexPage extends React.Component {
 
     constructor(props) {
+
         super(props);
 
-        this.state = {
-            color: "",
-            bgColor: "red"
-        };
+        this.state = {activeComponent: 0, additiveClass: '', additiveBg: ''};
+
+        this.panelMap = [
+            {component: React.createRef(), additiveClass: 'white', additiveBg: 'bg-clear'},
+            {component: React.createRef(), additiveClass: 'col-dark', additiveBg: 'bg-near-white'}
+        ];
+
+        this.navbarDOM = React.createRef();
+
+        this.handleFocusPanel = this.handleFocusPanel.bind(this);
+
     }
 
-    setNewColor(e) {
-        this.setState({
-            bgColor: this.state.color
-        });
-        e.preventDefault();
+    handleFocusPanel() {
+
+        if(this.navbarDOM.current) {
+
+            const navBounds = this.navbarDOM.current.getBoundingClientRect();
+
+            const currentFocusPanel = this.panelMap[this.state.activeComponent].component.current.getBoundingClientRect();
+
+            if ((currentFocusPanel.bottom < navBounds.bottom) || (currentFocusPanel.top > navBounds.bottom)) {
+
+                for (let i = 0; i < this.panelMap.length; i++) {
+
+                    const newFocusPanel = this.panelMap[i].component.current.getBoundingClientRect();
+
+                    if ((newFocusPanel.top < navBounds.bottom) && (newFocusPanel.bottom > navBounds.bottom)) {
+
+                        this.setState({activeComponent: i});
+
+                        this.setState({additiveClass: this.panelMap[i].additiveClass});
+
+                        this.setState({additiveBg: this.panelMap[i].additiveBg});
+
+                    }
+
+                }
+
+            }
+
+            this.setState({additiveBg: this.panelMap[this.state.activeComponent].additiveBg});
+
+        }
+
+    }
+
+    componentDidMount() {
+
+        window.addEventListener('scroll', this.handleFocusPanel);
+
+        this.handleFocusPanel();
+
+    }
+
+    componentWillUnmount() {
+
+        window.removeEventListener('scroll', this.handleFocusPanel);
+
     }
 
     render() {
-        var styleVal = {
-            backgroundColor: this.state.bgColor
-        };
 
         return (
-            <Layout>
-                <Navbar colorAttr={styleVal} />
-                <ContentBlock backCol={'green'} />
-                <ContentBlock backCol={'orange'} />
-                <ContentBlock backCol={'silver'} />
-                <ContentBlock backCol={'blue'} />
-                <ContentBlock backCol={'grey'} />
-                <ContentBlock backCol={'green'} />
-                <ContentBlock backCol={'orange'} />
-                <ContentBlock backCol={'silver'} />
-                <ContentBlock backCol={'blue'} />
-                <ContentBlock backCol={'grey'} />
-                <ContentBlock backCol={'green'} />
-                <ContentBlock backCol={'orange'} />
-                <ContentBlock backCol={'silver'} />
-                <ContentBlock backCol={'blue'} />
-                <ContentBlock backCol={'grey'} />
-            </Layout>
+
+            <BasicLayout>
+
+                <Navbar ref={this.navbarDOM} additiveClass={this.state.additiveClass} additiveBg={this.state.additiveBg} />
+
+                <HeadlinePanel ref={this.panelMap[0].component} />
+
+                <BlogSummary ref={this.panelMap[1].component} />
+
+            </BasicLayout>
+
         )
+
     }
+
 }
 
 export default IndexPage
