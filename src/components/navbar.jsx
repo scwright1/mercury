@@ -23,9 +23,7 @@ class Navbar extends React.Component {
 
         var classNames = require('classnames');
 
-        var linkText = 'white';
-
-        const darkText = 'col-dark';
+        var linkText = '';
 
         var outerBg = '';
 
@@ -48,8 +46,6 @@ class Navbar extends React.Component {
         var activeLink = classNames('link', linkText, 'ttu', 'mv4', 'ml3', 'dim', 'no-underline');
 
         var activeIcon = classNames('link', linkText, 'ttu', 'mv4', 'ml2', 'dim', 'no-underline');
-
-        //"fl w-100 h4 ph6-l ph5-m ph4-ns fixed z-max white"
 
         return (
 
