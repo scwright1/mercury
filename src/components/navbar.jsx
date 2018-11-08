@@ -1,29 +1,17 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { FiXCircle, FiTwitter, FiGithub } from 'react-icons/fi'
+import { FiTwitter, FiGithub } from 'react-icons/fi'
 
 import Logo from './logo'
 
 class Navbar extends React.Component {
 
-    constructor(props) {
-
-        super(props);
-
-        this.state = {
-
-            additiveClass: ''
-
-        }
-
-    }
-
     render() {
 
         var classNames = require('classnames');
 
-        var linkText = '';
+        var linkText = 'white';
 
         var outerBg = '';
 
@@ -49,23 +37,33 @@ class Navbar extends React.Component {
 
         return (
 
-            <header ref={this.props.innerRef} className={outerHeaderClass}>
+            <header
+                ref={this.props.innerRef}
+                className={outerHeaderClass}>
 
                 <div className="mw9 center pv4 mt3 ph4">
 
                     <Logo />
 
-                    <div id="menu-button" className="hamburger fr dib dn-l" onClick={this.setMenuState}>
+                    <div
+                        id="menu-button"
+                        className="hamburger fr dib dn-l"
+                        onClick={this.setMenuState}>
 
-                        <div className="bar-inner upper"></div>
+                        <div className="bar-inner upper">
+                        </div>
 
-                        <div className="bar-inner mid"></div>
+                        <div className="bar-inner mid">
+                        </div>
 
-                        <div className="bar-inner lower"></div>
+                        <div className="bar-inner lower">
+                        </div>
 
                     </div>
 
-                    <div id="desktop-menu" className="f6 lh-solid tracked-mega pv2 fr dn dib-l gilroy-medium">
+                    <div
+                        id="desktop-menu"
+                        className="f6 lh-solid tracked-mega pv2 fr dn dib-l gilroy-medium">
 
                         <Link to="#" className={disabledLink}>about</Link>
 
@@ -73,11 +71,23 @@ class Navbar extends React.Component {
 
                         <Link to="#blog" className={disabledLink}>blog</Link>
 
-                        <a href="mailto:hello@stephencwright.co.uk" className={activeLink}>reach me</a>
+                        <a
+                            href="mailto:hello@stephencwright.co.uk"
+                            className={activeLink}>
+                            reach me
+                        </a>
 
-                        <a href="https://twitter.com/ste_wr" className={activeIcon}><FiTwitter/></a>
+                        <a
+                            href="https://twitter.com/ste_wr"
+                            className={activeIcon}>
+                            <FiTwitter/>
+                        </a>
 
-                        <a href="https://github.com/scwright1" className={activeIcon}><FiGithub/></a>
+                        <a
+                            href="https://github.com/scwright1"
+                            className={activeIcon}>
+                            <FiGithub/>
+                        </a>
 
                     </div>
 
@@ -91,4 +101,6 @@ class Navbar extends React.Component {
 
 }
 
-export default React.forwardRef((props, ref) => ( <Navbar innerRef={ref} {...props} />));
+export default React.forwardRef((props, ref) => (
+    <Navbar innerRef={ref} {...props} />
+));
