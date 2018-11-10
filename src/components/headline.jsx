@@ -5,7 +5,7 @@ const Headline = React.forwardRef((props, ref) => (
 
         <div className="dtc v-mid tc white gilroy-ultralight ph3 ph4-l">
 
-            <h1 className="f6 f2-m f-subheadline-l fw6 tc ttu">technical&nbsp;producer</h1>
+            <h1 className="f3 f1-m f-subheadline-l fw6 tc ttu">technical&nbsp;producer</h1>
 
         </div>
 
