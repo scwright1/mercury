@@ -1,0 +1,36 @@
+#responsive-menu {
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    -ms-transition: opacity 0.2s ease;
+    -moz-transition: opacity 0.2s ease;
+    -webkit-transition: opacity 0.2s ease;
+
+    &.show {
+        pointer-events: auto;
+        overflow: auto;
+        opacity: 1;
+    }
+
+    > .responsive-menu-backer {
+        top: 50%;
+        line-height: 6rem;
+    }
+
+    > .responsive-menu-options {
+        top: 50%;
+        margin-top: -10rem;
+
+        > a {
+            line-height: 4rem;
+        }
+    }
+}
+
+.hamburger {
+    &.positioning-fix {
+        margin-top: -2px;
+        margin-left: -2px;
+    }
+}

@@ -5,7 +5,43 @@ import { FiTwitter, FiGithub } from 'react-icons/fi'
 
 import Logo from './logo'
 
+import './navbar.scss'
+
+import ResponsiveMenu from './responsive-menu'
+
 class Navbar extends React.Component {
+
+    constructor(props) {
+
+        super(props);
+
+        this.state = {menuOpen: false}
+
+        this.setMenuState = this.setMenuState.bind(this);
+
+        this.toggleMenu = this.toggleMenu.bind(this);
+
+    }
+
+    setMenuState = () => {
+
+        if(this.state.menuOpen) {
+
+            this.setState({menuOpen: false});
+
+        } else {
+
+            this.setState({menuOpen: true});
+
+        }
+
+    }
+
+    toggleMenu = (menuState) => {
+
+        this.setState({menuOpen: menuState});
+
+    }
 
     render() {
 
@@ -41,7 +77,7 @@ class Navbar extends React.Component {
                 ref={this.props.innerRef}
                 className={outerHeaderClass}>
 
-                <div className="mw9 center pv4 mt3 ph4">
+                <div className="navbar-anchor mw9 center pv4 mt3 ph4">
 
                     <Logo />
 
@@ -50,13 +86,13 @@ class Navbar extends React.Component {
                         className="hamburger fr dib dn-l"
                         onClick={this.setMenuState}>
 
-                        <div className="bar-inner upper">
+                        <div className="bar-inner fr w-50">
                         </div>
 
-                        <div className="bar-inner mid">
+                        <div className="bar-inner fr mid">
                         </div>
 
-                        <div className="bar-inner lower">
+                        <div className="bar-inner fr w-80">
                         </div>
 
                     </div>
@@ -92,6 +128,8 @@ class Navbar extends React.Component {
                     </div>
 
                 </div>
+
+                <ResponsiveMenu active={this.state.menuOpen} onMenuChange={this.toggleMenu}/>
 
             </header>
 

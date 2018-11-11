@@ -1,0 +1,53 @@
+.hamburger {
+    margin-top: 1px;
+    width: 30px;
+    height: 30px;
+
+    > .bar-inner {
+        height: 6px;
+        transition: 0.2s ease all;
+        -o-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -ms-transition: 0.2s ease all;
+        background-color: #303139;
+
+        &.upper {
+        }
+
+        &.mid {
+            width: 110%;
+            margin: 6px 0;
+        }
+
+        &.lower {
+        }
+    }
+
+    &:hover {
+        > .bar-inner {
+            width: 100%;
+            background-color: #f7f7f7;
+        }
+    }
+}
+
+.disabled-link {
+    pointer-events: none;
+}
+
+header.bg-near-white {
+    > .navbar-anchor {
+        .hamburger {
+            > .bar-inner {
+                background-color: #6447d1;
+            }
+
+            &:hover {
+                > .bar-inner {
+                    background-color: #303139;
+                }
+            }
+        }
+    }
+}
