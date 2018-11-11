@@ -98,9 +98,9 @@ class ResponsiveMenu extends React.Component {
 
                     <div className="h3">
 
-                        <a href="https://twitter.com/ste_wr" className="di link no-underline white ph2 dim" target="_blank" onClick={this.toggleMenu}><FiTwitter/></a>
+                        <a href="https://twitter.com/ste_wr" className="di link no-underline white ph2 dim" target="_blank" rel="noopener noreferrer" onClick={this.toggleMenu}><FiTwitter/></a>
 
-                        <a href="https://github.com/scwright1" className="di link no-underline white ph2 dim" target="_blank" onClick={this.toggleMenu}><FiGithub/></a>
+                        <a href="https://github.com/scwright1" className="di link no-underline white ph2 dim" target="_blank" rel="noopener noreferrer" onClick={this.toggleMenu}><FiGithub/></a>
 
                     </div>
 
