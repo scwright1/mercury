@@ -8,6 +8,8 @@ import HeadlinePanel from '../components/headline'
 
 import BlogSummary from '../components/blog-summary'
 
+import Contact from '../components/contact'
+
 import 'tachyons'
 
 import '../components/base.scss'
@@ -26,7 +28,8 @@ class IndexPage extends React.Component {
 
         this.panelMap = [
             {component: React.createRef(), additiveClass: 'white', additiveBg: 'bg-clear'},
-            {component: React.createRef(), additiveClass: 'col-dark', additiveBg: 'bg-near-white'}
+            {component: React.createRef(), additiveClass: 'col-dark', additiveBg: 'bg-near-white'},
+            {component: React.createRef(), additiveClass: 'white', additiveBg: 'bg-clear'}
         ];
 
         this.navbarDOM = React.createRef();
@@ -94,6 +97,8 @@ class IndexPage extends React.Component {
                 <HeadlinePanel ref={this.panelMap[0].component} />
 
                 <BlogSummary ref={this.panelMap[1].component} />
+
+                <Contact ref={this.panelMap[2].component} />
 
             </BasicLayout>
 
